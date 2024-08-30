@@ -41,7 +41,7 @@ def main():
 
     with open("config.json", "r") as file:
         config  = json.load(file)
-    
+
     # Model configurations
     n_embd             = config['n_embd']
     n_heads            = config['n_heads']

@@ -169,7 +169,7 @@ def main():
     loss_fn = CrossEntropyLoss()
 
     # Create the log directory to write checkpoints to and log to
-    log_dir = "fsdp_notensordot"
+    log_dir = "large_flash_stu"
     os.makedirs(log_dir, exist_ok=True)
 
     checkpoints = find_checkpoint(log_dir)

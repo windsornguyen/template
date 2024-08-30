@@ -108,6 +108,7 @@ class Transformer(PreTrainedModel):
         )
 
         self.lm_head = nn.Linear(self.n_embd, self.vocab_size, bias=self.bias, dtype=config.torch_dtype)
+        self.transformer.tok_emb.weight = self.lm_head.weight
 
         self.std = (self.n_embd) ** -0.5
         self.apply(self._init_weights)

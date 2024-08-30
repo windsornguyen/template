@@ -1,8 +1,8 @@
 {
   "model_type": "FlashSTU",
-  "n_embd": 256,
-  "n_heads": 8,
-  "n_layers": 3,
+  "n_embd": 2304,
+  "n_heads": 9,
+  "n_layers": 8,
   "seq_len": 8192,
   "window_size": 1024,
   "vocab_size": 200064,
@@ -14,11 +14,11 @@
   "num_epochs": 1,
   "global_bsz": 524288,
   "num_steps": 19073,
-  "bsz": 4,
+  "bsz": 2,
   "warmup_steps": 715,
-  "eval_period": 128,
-  "save_period": 128,
-  "max_lr": 1.0e-3,
+  "eval_period": 50,
+  "save_period": 1000,
+  "max_lr": 3.0e-4,
   "min_lr": 3.0e-5,
   "max_norm": 1.0,
   "dilation": 1,
@@ -41,15 +41,13 @@
     "buffer": "bfloat16"
   },
   "fsdp_modules": [
-    "nn.Embedding",
     "STU",
     "Attention",
-    "MLP",
-    "nn.Linear"
+    "MLP"
   ],
   "use_activation_checkpointing": true,
   "use_flash_fft": true,
-  "use_approx": false,
+  "use_approx": true,
   "softcap": 50.0,
   "torch_compile": false
 }
