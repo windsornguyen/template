@@ -1,0 +1,48 @@
+{
+    "n_embd": 2304,
+    "n_heads": 9,
+    "n_layers": 6,
+    "seq_len": 8192,
+    "vocab_size": 200064,
+    "mlp_scale": 12,
+    "bias": false,
+    "dropout": 0.01,
+    "num_epochs": 3,
+    "global_bsz": 524288,
+    "num_steps": 19073,
+    "bsz": 2,
+    "warmup_steps": 715,
+    "eval_period": 250,
+    "save_period": 5000,
+    "max_lr": 3.0e-4,
+    "min_lr": 3.0e-4,
+    "max_norm": 1.0,
+    "dilation": 1,
+    "fsdp": true,
+    "ddp": false,
+    "mixed_precision": true,
+    "torch_dtype": "bfloat16",
+    "use_cpu_offload": false,
+    "sharding_strategy": "full_shard",
+    "state_dict_type": "full",
+    "auto_wrap_policy": "partial",
+    "backward_prefetch": "backward_pre",
+    "forward_prefetch": false,
+    "sync_module_states": true,
+    "use_orig_params": true,
+    "device_id": null,
+    "precision": {
+      "param": "bfloat16",
+      "reduce": "bfloat16",
+      "buffer": "bfloat16"
+    },
+    "fsdp_modules": [
+      "MLP",
+      "Attention",
+      "nn.Embedding",
+      "nn.Linear"
+    ],
+    "use_activation_checkpointing": true,
+    "torch_compile": false
+  }
+  
